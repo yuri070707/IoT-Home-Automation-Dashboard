@@ -1,5 +1,6 @@
 const API_URL = 'http://127.0.0.1:5000';
 
+// Function to get the data from the backend
 export const getData = async () => {
     try {
         const response = await fetch(`${API_URL}/data`);
@@ -13,6 +14,7 @@ export const getData = async () => {
     }
 };
 
+// Function to send the data to the backend
 export const sendData = async (temperature, humidity) => {
     try {
         const response = await fetch(`${API_URL}/data`, {

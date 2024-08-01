@@ -3,10 +3,12 @@ import { getData, sendData } from './services/api';
 import './App.css';
 
 function App() {
+    // State to hold the temperature and humidity values
     const [temperature, setTemperature] = useState('');
     const [humidity, setHumidity] = useState('');
     const [data, setData] = useState(null);
 
+    // useEffect hook to fetch data from the backend when the component mounts
     useEffect(() => {
         const fetchData = async () => {
             console.log("Fetching data...");
@@ -17,6 +19,7 @@ function App() {
         fetchData();
     }, []);
 
+    // Function to handle form submission and send data to the backend
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Sending data...");

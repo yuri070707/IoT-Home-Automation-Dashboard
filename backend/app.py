@@ -4,16 +4,19 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+# Dictionary to store temperature and humidity data
 data = {
     "temperature": None,
     "humidity": None
 }
 
+# Endpoint to get the current data
 @app.route('/data', methods=['GET'])
 def get_data():
     print("GET request received")
     return jsonify(data)
 
+# Endpoint to update the data
 @app.route('/data', methods=['POST'])
 def update_data():
     global data

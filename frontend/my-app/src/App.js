@@ -22,11 +22,7 @@ function App() {
         console.log("Sending data...");
         const result = await sendData(temperature, humidity);
         console.log("Data sent:", result);
-        if (result) {
-            setData(result);
-        } else {
-            console.error("Failed to send data.");
-        }
+        setData(result);
     };
 
     return (
